@@ -1,0 +1,12 @@
+<form (ngSubmit)="doLogin()">
+    <h1>Login</h1><br/>
+  
+    <span class="input"></span>
+    <input type="username" name="username" placeholder="Username" [(ngModel)]="loginInfo.username" required />
+    <span id="passwordMeter"></span>
+    <input type="password" name="password" [(ngModel)]="loginInfo.password" id="password" placeholder="Password" title="Password min 8 characters. At least one UPPERCASE and one lowercase letter" required pattern="(?=^.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"/>
+    <br>
+    <br>
+    <button type="submit"> Log me in </button>
+    <!-- <button type="submit" value="Sign Up" title="Submit form" class="icon-arrow-right"><span>Log me in!!</span></button> -->
+  </form>

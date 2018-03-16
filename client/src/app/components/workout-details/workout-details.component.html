@@ -1,0 +1,37 @@
+<div *ngIf="currentUser">
+  <header>
+    <p> Hello, {{ currentUser.username }}. </p>
+    <a [routerLink]="['/add-workout']">Add a new Workout</a>
+    <br>
+    <button (click)="logMeOutPls()"> Log Out </button>
+    <p *ngIf="logoutError" class="error">
+      {{ logoutError }}
+    </p>
+  </header>
+</div>
+  <h2>Workout Detail</h2> 
+  <!-- extra -->
+
+  <!-- <div *ngIf='workout._id'> -->
+    <h3>{{ workout.typeOfExercise }}</h3>
+    <p>{{ workout.duration }}</p>
+    <button *ngIf="workout._id" (click)="deleteThisWorkout()">
+      DELETE
+    </button>
+
+  <!-- </div> -->
+  <hr>
+  <!-- update workout area -->
+
+<form (ngSubmit)="doTheUpdate(workout._id, myForm)" #myForm="ngForm" >
+  
+  <label for="workout-name-input"> Workout Name </label>
+  <input id="workout-name-input" type="text"  [(ngModel)]="workout.typeOfExercise" name="workoutName" value="{{ workout.name }}">
+  <br>
+  <label for="workout-duration-input"> Workout duration </label>
+  <input id="workout-duration-input" type="duration"  [(ngModel)]="workout.duration" name="workoutduration" value="{{ workout.duration }}">
+  <br>
+  <button type="submit">Save updates</button>
+</form>
+<br>
+<a [routerLink]="['/workouts']">back</a>

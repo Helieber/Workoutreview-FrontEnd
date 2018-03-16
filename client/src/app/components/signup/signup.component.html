@@ -1,0 +1,19 @@
+<h1>Sign up</h1>
+   <p *ngIf="errorMessage" class="error">
+  {{ errorMessage }}
+</p>
+  <form (ngSubmit)="submitForm()" #myForm="ngForm" method="get">
+    <span class="input"></span>
+    <input type="text" name="fullNameValue" placeholder="Full Name" [(ngModel)]="signUpInfo.fullName" title="Format: Xx[space]Xx (e.g. Alex Cican)" autofocus autocomplete="off" required pattern="^\w+\s\w+$" />
+    <span class="input"></span>
+    <input type="text" name="usernameValue" placeholder="Username" [(ngModel)]="signUpInfo.username" required />
+    <span id="passwordMeter"></span>
+    <input type="password" name="passwordValue" [(ngModel)]="signUpInfo.password" id="password" placeholder="Password" title="Password min 8 characters. At least one UPPERCASE and one lowercase letter" required pattern="(?=^.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"/>
+    <br>
+    <br>
+    <button type="submit"> Sign Up </button>
+    <!-- <button type="submit" value="Sign Up" title="Submit form" class="icon-arrow-right"><span>Sign up</span></button> -->
+</form> 
+<p>Already have account?
+  <a [routerLink]="['/login']">Log In</a>
+</p>

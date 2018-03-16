@@ -1,0 +1,18 @@
+<h3>Add a new workout</h3>
+  <p *ngIf="saveErr" class="error">
+    {{ saveErr }}
+  </p>
+
+<form (ngSubmit)="saveWorkout()">
+
+  <label for="workout-name-input"> Workout Name </label>
+  <input id="workout-name-input" type="text" placeholder="Workout name" [(ngModel)]="newWorkout.typeOfExercise" name="workoutName">
+  <br>
+
+  <label for="workout-duration-input"> Workout Name </label>
+  <input id="workout-duration-input" type="text" placeholder="Workout duration" [(ngModel)]="newWorkout.duration" name="workoutDuration">
+  <br>
+
+
+  <button> Save Workout </button>
+</form>
