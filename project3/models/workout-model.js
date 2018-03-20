@@ -5,7 +5,7 @@ const Review = require('./review-model');
 const WorkoutSchema = new Schema({
         typeOfExercise: { 
             type: String, 
-            required: true 
+            required: true,
         },
         duration: { 
             type: Number,

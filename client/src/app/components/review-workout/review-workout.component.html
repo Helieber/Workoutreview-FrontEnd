@@ -1,0 +1,27 @@
+<div *ngIf="currentUser">
+  <header>
+    <p> Hello, {{ currentUser.username }}. </p>
+    <a [routerLink]="['/add-workout']">Add a new Workout</a>
+    <br>
+    <button (click)="logMeOutPls()"> Log Out </button>
+    <p *ngIf="logoutError" class="error">
+      {{ logoutError }}
+    </p>
+  </header>
+</div>
+
+<div>
+<h3>{{ workout.typeOfExercise }}</h3>
+    <p>{{ workout.duration }}</p>
+    <div *ngFor = "let oneReview of workout.reviews">
+      <a>{{ oneReview.content}}</a>
+      <br>
+    </div>
+
+<p>Add the review below:</p>
+<form (ngSubmit)="createReview(workout._id, reviewData)" >
+    <label for="review-content-input"> Content </label>
+    <input id="review-content-input" type="text"  [(ngModel)]="reviewData.content" name="content">
+    <br>
+    <button type="submit">Submit the review</button>
+</form>

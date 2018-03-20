@@ -43,4 +43,11 @@ export class WorkoutService {
     { withCredentials: true })
     .toPromise()
   }
+
+  addComment(id, dataToSend){
+    return this.myHttp.post( `${environment.apiBase}/api/workouts/${id}/reviews`, dataToSend,
+    {withCredentials: true})
+    .toPromise()
+    .then( res => res.json())
+  }
 }

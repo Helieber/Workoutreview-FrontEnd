@@ -13,5 +13,8 @@
 
   <div *ngFor="let workout of workouts">
     <a [routerLink]="['/workouts', workout._id]">{{ workout.typeOfExercise }}</a>
+    <a>-</a>
+    <a [routerLink]="['/add-review']">Add Comment</a>
+    <br><br>
   </div>
 </div>

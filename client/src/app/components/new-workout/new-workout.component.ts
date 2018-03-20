@@ -23,8 +23,7 @@ export class NewWorkoutComponent implements OnInit {
     private myRouter: Router
   ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   saveWorkout(){
     this.myWorkoutService.createNewWorkout(this.newWorkout)

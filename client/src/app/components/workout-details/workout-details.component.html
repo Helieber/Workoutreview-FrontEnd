@@ -10,11 +10,16 @@
   </header>
 </div>
   <h2>Workout Detail</h2> 
-  <!-- extra -->
+ 
 
   <!-- <div *ngIf='workout._id'> -->
     <h3>{{ workout.typeOfExercise }}</h3>
     <p>{{ workout.duration }}</p>
+    <div *ngFor = "let oneReview of workout.reviews">
+      <a>{{ oneReview.content}}</a>
+      <br>
+    </div>
+    <!-- <p>{{ workout.reviews}}</p> -->
     <button *ngIf="workout._id" (click)="deleteThisWorkout()">
       DELETE
     </button>
@@ -35,3 +40,12 @@
 </form>
 <br>
 <a [routerLink]="['/workouts']">back</a>
+<hr>
+
+<p>Add the review below:</p>
+ <form (ngSubmit)="createReview(workout._id, reviewData)" >
+     <label for="review-content-input"> Content </label>
+     <input id="review-content-input" type="text"  [(ngModel)]="reviewData.content" name="content">
+     <br>
+     <button type="submit">Submit the review</button>
+ </form>

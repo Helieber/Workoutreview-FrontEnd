@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { WorkoutsComponent } from './components/workouts/workouts.component';
 import { WorkoutDetailsComponent } from './components/workout-details/workout-details.component';
 import { NewWorkoutComponent } from './components/new-workout/new-workout.component';
+import { ReviewWorkoutComponent } from './components/review-workout/review-workout.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { NewWorkoutComponent } from './components/new-workout/new-workout.compon
     LoginComponent,
     WorkoutsComponent,
     NewWorkoutComponent,
-    WorkoutDetailsComponent
+    WorkoutDetailsComponent,
+    ReviewWorkoutComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { WorkoutsComponent } from './components/workouts/workouts.component';
 import { WorkoutDetailsComponent } from './components/workout-details/workout-details.component';
 import { NewWorkoutComponent } from './components/new-workout/new-workout.component';
+import { ReviewWorkoutComponent } from './components/review-workout/review-workout.component';
 
 
 export const routes: Routes = [
@@ -15,6 +16,7 @@ export const routes: Routes = [
     { path: 'workouts', component: WorkoutsComponent },
     { path: 'workouts/:id', component: WorkoutDetailsComponent},
     { path: 'add-workout', component: NewWorkoutComponent},
+    { path: 'add-review', component: ReviewWorkoutComponent},
     { path: '**', redirectTo: '' }
     
 ];

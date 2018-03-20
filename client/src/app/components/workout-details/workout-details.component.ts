@@ -13,13 +13,18 @@ import "rxjs/add/operator/toPromise";
   styleUrls: ['./workout-details.component.css']
 })
 export class WorkoutDetailsComponent implements OnInit {
-  currentUser: any ={};
+  currentUser: string;
   workoutListError: string;
   workout= <any>{};
   logoutError: string;
   updatedWorkoutName: string;
   updatedWorkoutDuration: Number;
   updatedWorkout: any = {}
+  savingErr: string;
+  reviewData = {
+    content: ''
+  }
+
   public typeOfExercise: string;
   public duration: Number;
 
@@ -34,7 +39,9 @@ export class WorkoutDetailsComponent implements OnInit {
     this.myAuthService
       .checklogin()
       // If success, we are logged in
-      .then()
+      .then(resultFromApi => {
+        this.currentUser = resultFromApi;
+        console.log(resultFromApi)})
       // Even if u don't do anything on error, catch to void a console log error
       .catch( err => {
         console.log(err)
@@ -97,6 +104,19 @@ export class WorkoutDetailsComponent implements OnInit {
         console.log("Error in deleting:", err)
       } )
       
+    }
+
+    createReview(id, dataFromForm){
+      this.myWorkoutService.addComment(id, dataFromForm )
+      .then( res => {
+        console.log('res from add the review: ', res)
+        this.reviewData = {
+          content: ''
+        }
+        this.savingErr ='',
+        this.myRouter.navigate(['/workouts'])
+        
+      })
     }
   
   logMeOutPls() {
