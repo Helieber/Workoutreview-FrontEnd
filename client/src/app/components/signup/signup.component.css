@@ -23,7 +23,7 @@
   
   /* positions the form and adds subtle animation */
   form {
-    margin: 12% auto;
+    margin: 5% auto;
     width: 19em;
     text-align: center;
     position: relative;
@@ -71,7 +71,7 @@
   
   /* width of user typed input must not go over submit button on the right (adds padding) */
   #password {
-    width: 10.5em;
+    width: 12em;
     padding-right: 1.85em;
   }
   
@@ -86,7 +86,7 @@
     user-select: none;
     display: block;
     position: relative;
-    width: .25em;
+    width: 0em;
     height: 3em;
     background: #fff;
     margin: 0% 0 -2em;
@@ -96,7 +96,7 @@
   /* right rectangle that hides right border line */
   .input:after, #passwordMeter:after {
     content: '';
-    width: 1em;
+    width: 0em;
     height: 100%;
     position: absolute;
     right: -19.5em; /* eyeball the number */
@@ -233,4 +233,5 @@
   .ng-touched.ng-valid {
     border-color: green;
   }
+
   

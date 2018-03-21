@@ -1,10 +1,27 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <!-- <a [routerLink]="['/signup']">Signup</a><br> -->
-  <!-- <a [routerLink]="['/login']">Login</a> -->
-  <router-outlet></router-outlet>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Workouts from Hell</title>
+</head>
+
+<body>
+  <div class='web-title' style="text-align:center">
+    <h1>Welcome to {{ title }}!</h1>
+    <!-- <a [routerLink]="['/signup']">Signup</a> -->
+    <!-- <br>
+    <a [routerLink]="['/login']">Login</a> -->
+  </div>
+
+  
+  <div style="text-align:center">
+    <router-outlet></router-outlet>
+  </div>
+
+
+</body>
+
+</html>

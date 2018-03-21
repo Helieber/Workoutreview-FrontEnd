@@ -38,7 +38,7 @@
   
   /* styles the input field. Strip from default styling and add borders */
   input {
-    color: #444;
+    color: rgb(68, 68, 68);
     font-size: 1.5em;
     outline: none; /* Chrome outline */
     box-shadow: none; /* Firefox outline */
@@ -71,7 +71,7 @@
   
   /* width of user typed input must not go over submit button on the right (adds padding) */
   #password {
-    width: 10.5em;
+    width: 12em;
     padding-right: 1.85em;
   }
   
@@ -86,17 +86,18 @@
     user-select: none;
     display: block;
     position: relative;
-    width: .25em;
+    width: 0em;
     height: 3em;
     background: #fff;
     margin: 0% 0 -2em;
     z-index: 1;
+    
   }
   
   /* right rectangle that hides right border line */
   .input:after, #passwordMeter:after {
     content: '';
-    width: 1em;
+    width: 0em;
     height: 100%;
     position: absolute;
     right: -19.5em; /* eyeball the number */
@@ -106,7 +107,7 @@
   
   /* on focus change colour of placeholder */
   .placeholder:focus {
-    color: #ddd;
+    color: #1a9173;
   }
   
   input:focus::-webkit-input-placeholder {
@@ -234,3 +235,7 @@
     border-color: green;
   }
   
+  .login{
+    color: blue;
+    background: transparent blue;
+  }

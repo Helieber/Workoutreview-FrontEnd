@@ -17,14 +17,14 @@ const reviewRoutes = express.Router();
 // });
 
 // Route to Handle Review Form Submission
-reviewRoutes.post('/api/workouts/:id/reviews', (req, res, next) =>{
+reviewRoutes.post('/api/workouts/:id/reviews', (req, res, next) => {
     // Load the Workout from the Database
     // let id = req.params.id;
     // console.log(id)
     // console.log("req.params.id:  ", req.params.id)
     Workout.findById(req.params.id, (err, workout) => {
         // Create the Schema Object to Save the Review
-        const newReview = new Review ({
+        const newReview = new Review({
             content: req.body.content
         });
 
@@ -32,10 +32,12 @@ reviewRoutes.post('/api/workouts/:id/reviews', (req, res, next) =>{
         workout.reviews.push(newReview);
 
         // Save the workout to the Database
-        workout.save((err) =>{
-            if (err) {return next(err)}
+        workout.save((err) => {
+            if (err) {
+                return next(err)
+            }
 
-        res.status(200).json(workout); 
+            res.status(200).json(workout);
         });
     });
 });

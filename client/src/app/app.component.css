@@ -1,0 +1,18 @@
+
+  body {
+    font-family: "Roboto", Arial, sans-serif;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #73d48b;
+    font-weight: 300;
+    overflow-x: hidden;
+    margin: 0
+  }
+
+
+  
+  .web-title{
+    color: rgb(15, 81, 224);
+
+    font-size: 50px;
+  }

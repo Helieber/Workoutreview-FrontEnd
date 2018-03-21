@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 
 // Services 
 import { AuthService } from './services/auth.service';
-import { SignupComponent } from './components/signup/signup.component';
-import { LoginComponent } from './components/login/login.component';
+
 import { HttpModule } from '@angular/http';
 import { WorkoutService } from './services/workout.service'
 
 // Components
+import { MainComponent } from './components/main/main.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { AppRoutingModule } from './app-routing.module';
 import { WorkoutsComponent } from './components/workouts/workouts.component';
 import { WorkoutDetailsComponent } from './components/workout-details/workout-details.component';
@@ -27,7 +29,8 @@ import { ReviewWorkoutComponent } from './components/review-workout/review-worko
     WorkoutsComponent,
     NewWorkoutComponent,
     WorkoutDetailsComponent,
-    ReviewWorkoutComponent
+    ReviewWorkoutComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
