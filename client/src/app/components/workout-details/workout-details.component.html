@@ -13,8 +13,10 @@
  
 
   <!-- <div *ngIf='workout._id'> -->
-    <h3>{{ workout.typeOfExercise }}</h3>
-    <p>{{ workout.duration }}</p>
+    <h3> {{ workout.typeOfExercise }}</h3>
+    <p>Sets: {{ workout.sets }}</p>
+    <p>Reps: {{ workout.reps }}</p>
+    <p>Rest Time: {{ workout.duration }}</p>
     <div *ngFor = "let oneReview of workout.reviews">
       <a>{{ oneReview.content}}</a>
       <br>
@@ -30,10 +32,16 @@
 
 <form (ngSubmit)="doTheUpdate(workout._id, myForm)" #myForm="ngForm" >
   
-  <label for="workout-name-input"> Workout Name </label>
+  <label for="workout-name-input"> Name: </label>
   <input id="workout-name-input" type="text"  [(ngModel)]="workout.typeOfExercise" name="workoutName" value="{{ workout.name }}">
   <br>
-  <label for="workout-duration-input"> Workout duration </label>
+  <label for="workout-sets-input"> Sets: </label>
+  <input id="workout-sets-input" type="text"  [(ngModel)]="workout.sets" name="workoutSets" value="{{ workout.sets }}">
+  <br>
+  <label for="workout-reps-input"> Reps: </label>
+  <input id="workout-reps-input" type="text"  [(ngModel)]="workout.reps" name="workoutReps" value="{{ workout.reps }}">
+  <br>
+  <label for="workout-duration-input"> Rest: </label>
   <input id="workout-duration-input" type="duration"  [(ngModel)]="workout.duration" name="workoutduration" value="{{ workout.duration }}">
   <br>
   <button type="submit">Save updates</button>

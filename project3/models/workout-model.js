@@ -7,6 +7,14 @@ const WorkoutSchema = new Schema({
         type: String,
         required: true,
     },
+    sets: {
+        type: Number,
+        required: true
+    },
+    reps: {
+        type: Number,
+        required: true
+    },
     duration: {
         type: Number,
         required: true
@@ -24,4 +32,3 @@ const WorkoutSchema = new Schema({
 const Workout = mongoose.model('Workout', WorkoutSchema);
 
 module.exports = Workout;
-// boo

@@ -17,9 +17,11 @@ export class WorkoutDetailsComponent implements OnInit {
   workoutListError: string;
   workout = <any>{};
   logoutError: string;
+  updatedWorkout: any = {};
   updatedWorkoutName: string;
   updatedWorkoutDuration: Number;
-  updatedWorkout: any = {}
+  updatedWorkouSets: Number;
+  updatedWorkoutReps: Number;
   savingErr: string;
   reviewData = {
     content: ''
@@ -27,6 +29,8 @@ export class WorkoutDetailsComponent implements OnInit {
 
   public typeOfExercise: string;
   public duration: Number;
+  public sets: Number;
+  public reps: Number;
 
   constructor(
     private myRoute: ActivatedRoute,
@@ -68,6 +72,8 @@ export class WorkoutDetailsComponent implements OnInit {
     const formInfo = formData.form.controls;
     console.log("=============== formData:", formInfo);
     this.typeOfExercise = formInfo.workoutName.value;
+    this.sets = formInfo.workoutSets.value;
+    this.reps = formInfo.workoutReps.value;
     this.duration = formInfo.workoutduration.value
     console.log("workoutidafter:", this.workout._id)
 
@@ -79,6 +85,8 @@ export class WorkoutDetailsComponent implements OnInit {
   sendUpdatesToApi(id) {
     this.updatedWorkout = {
       typeOfExercise: this.workout.typeOfExercise,
+      sets: this.workout.sets,
+      reps: this.workout.reps,
       duration: this.workout.duration
     }
 

@@ -13,17 +13,20 @@ const Workout = require('../models/workout-model');
 
 // create new workout
 workoutRoutes.post('/api/workouts/new', (req, res, next) => {
+  console.log("heyyyyy")
     if(!req.user){
         res.status(401).json({message: "Log in to create workout."});
         return;
     }
     const newWorkout = new Workout({
-      typeOfExercise : req.body.typeOfExercise,
-      duration      : req.body.duration,
-      owner         : req.user._id
+      typeOfExercise  : req.body.typeOfExercise,
+      sets            : req.body.sets,
+      reps            : req.body.reps,
+      duration        : req.body.duration,
+      owner           : req.user._id
     });
   
-
+console.log("====================", newWorkout)
     newWorkout.save((err) => {
         if(err){
             res.status(500).json({message: "Some weird error from DB."});
@@ -98,6 +101,8 @@ workoutRoutes.put('/api/workouts/:id', (req, res, next) => {
 
     const updates = {
       typeOfExercise  : req.body.typeOfExercise,
+      sets            : req.body.sets,
+      reps            : req.body.reps,
       duration        : req.body.duration
       
       

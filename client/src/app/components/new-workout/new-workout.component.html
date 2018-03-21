@@ -5,11 +5,19 @@
 
 <form (ngSubmit)="saveWorkout()">
 
-  <label for="workout-name-input"> Workout Name </label>
+  <label for="workout-name-input"> Name: </label>
   <input id="workout-name-input" type="text" placeholder="Workout name" [(ngModel)]="newWorkout.typeOfExercise" name="workoutName">
   <br>
 
-  <label for="workout-duration-input"> Workout Duration </label>
+  <label for="workout-sets-input"> Sets: </label>
+  <input id="workout-sets-input" type="text" placeholder="Workout sets" [(ngModel)]="newWorkout.sets" name="workoutSets">
+  <br>
+
+  <label for="workout-reps-input"> Reps: </label>
+  <input id="workout-reps-input" type="text" placeholder="Workout reps" [(ngModel)]="newWorkout.reps" name="workoutReps">
+  <br>
+
+  <label for="workout-duration-input"> Rest: </label>
   <input id="workout-duration-input" type="text" placeholder="Workout duration" [(ngModel)]="newWorkout.duration" name="workoutDuration">
   <br>
 
