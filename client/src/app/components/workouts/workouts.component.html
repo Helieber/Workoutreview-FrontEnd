@@ -1,54 +1,40 @@
-<div id="fh5co-header">
-  <header id="fh5co-header-section">
-    <div class="container">
-      <div class="nav-header">
-        <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle">
-          <i></i>
-        </a>
-        <h1 id="fh5co-logo">
-          <a href="index.html">Fit
-            <span>ness</span>
-          </a>
-        </h1>
-        <!-- START #fh5co-menu-wrap -->
-        <nav id="fh5co-menu-wrap" role="navigation">
-          <ul class="sf-menu" id="fh5co-primary-menu">
-            <li class="active">
-              <a href="index.html">Home</a>
-            </li>
-
-            <li>
-              <a [routerLink]="['/signup']">Signup</a>
-            </li>
-            <li>
-              <a [routerLink]="['/login']">Login</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
-</div>
-
 <div *ngIf="currentUser">
   <header>
     <p> Hello, {{ currentUser.username }}. </p>
-    <a [routerLink]="['/add-workout']">Add a new Workout</a>
-    <br>
     <button (click)="logMeOutPls()"> Log Out </button>
     <p *ngIf="logoutError" class="error">
       {{ logoutError }}
     </p>
+
+    <br>
+    <br>
   </header>
+</div>
+<h2>Workout List</h2>
+<a [routerLink]="['/add-workout']">Add a new Workout</a>
+<br>
 
-  <h2>Workout List</h2>
+<div class="container">
+  <div class="row">
+    <div >
+      <div class="card">
+        <div class="card-body">
+          <div class="col-6 col-md-4" *ngFor="let workout of workouts">
+            <p class="card-title" id="details" [routerLink]="['/workouts', workout._id]">
+              {{ workout.typeOfExercise }}- sets: {{workout.sets}}, reps: {{workout.reps}}, rest: {{workout.duration}}sec</p>
+            <br>
+          </div>
+        </div>
 
-  <div *ngFor="let workout of workouts">
-    <a [routerLink]="['/workouts', workout._id]">{{ workout.typeOfExercise }}</a>
-    <!-- <a>-</a> -->
-    <!-- <a [routerLink]="['/add-review']">Add Comment</a> -->
-    <br>
-    <br>
-    
+      </div>
+
+    </div>
+
+
   </div>
 </div>
+
+<!-- <div class="cards" *ngFor="let workout of workouts">
+  <a class="details" [routerLink]="['/workouts', workout._id]">{{ workout.typeOfExercise }}</a>
+  <br>
+</div> -->

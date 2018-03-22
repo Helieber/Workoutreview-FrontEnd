@@ -1,24 +1,24 @@
 <h3>Add a new workout</h3>
-  <p *ngIf="saveErr" class="error">
+  <p *ngIf="savingErr" class="error">
     {{ saveErr }}
   </p>
 
 <form (ngSubmit)="saveWorkout()">
 
   <label for="workout-name-input"> Name: </label>
-  <input id="workout-name-input" type="text" placeholder="Workout name" [(ngModel)]="newWorkout.typeOfExercise" name="workoutName">
+  <input id="workout-name-input" type="text" placeholder="Workout name" [(ngModel)]="newWorkout.workoutName" name="workoutName">
   <br>
 
   <label for="workout-sets-input"> Sets: </label>
-  <input id="workout-sets-input" type="text" placeholder="Workout sets" [(ngModel)]="newWorkout.sets" name="workoutSets">
+  <input id="workout-sets-input" type="text" placeholder="Workout sets" [(ngModel)]="newWorkout.workoutSets" name="workoutSets">
   <br>
 
   <label for="workout-reps-input"> Reps: </label>
-  <input id="workout-reps-input" type="text" placeholder="Workout reps" [(ngModel)]="newWorkout.reps" name="workoutReps">
+  <input id="workout-reps-input" type="text" placeholder="Workout reps" [(ngModel)]="newWorkout.workoutReps" name="workoutReps">
   <br>
 
   <label for="workout-duration-input"> Rest: </label>
-  <input id="workout-duration-input" type="text" placeholder="Workout duration" [(ngModel)]="newWorkout.duration" name="workoutDuration">
+  <input id="workout-duration-input" type="text" placeholder="Workout duration" [(ngModel)]="newWorkout.workoutDuration" name="workoutDuration">
   <br>
 
 

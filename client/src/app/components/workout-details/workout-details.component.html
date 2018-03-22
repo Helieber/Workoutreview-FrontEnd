@@ -9,51 +9,77 @@
     </p>
   </header>
 </div>
-  <h2>Workout Detail</h2> 
- 
+<h2>Workout Detail</h2>
 
-  <!-- <div *ngIf='workout._id'> -->
-    <h3> {{ workout.typeOfExercise }}</h3>
-    <p>Sets: {{ workout.sets }}</p>
-    <p>Reps: {{ workout.reps }}</p>
-    <p>Rest Time: {{ workout.duration }}</p>
-    <div *ngFor = "let oneReview of workout.reviews">
-      <a>{{ oneReview.content}}</a>
-      <br>
+
+<!-- <div *ngIf='workout._id'> -->
+<h3> {{ workout.typeOfExercise }}</h3>
+<p>Sets: {{ workout.sets }}</p>
+<p>Reps: {{ workout.reps }}</p>
+<p>Rest Time: {{ workout.duration }}</p>
+<div *ngFor="let oneReview of workout.reviews">
+  <a>{{ oneReview.content}}</a>
+  <br>
+</div>
+<!-- <p>{{ workout.reviews}}</p> -->
+<button *ngIf="workout._id" (click)="deleteThisWorkout()">
+  DELETE
+</button>
+
+<!-- </div> -->
+<hr>
+<!-- update workout area -->
+<div class="container">
+  <h2>Update Workout</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog"> -->
+
+      <!-- Modal content-->
+      <!-- <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Update Workout</h4>
+        </div>
+        <div class="modal-body"> -->
+          <form (ngSubmit)="doTheUpdate(workout._id, myForm)" #myForm="ngForm">
+
+            <label for="workout-name-input"> Name: </label>
+            <input id="workout-name-input" type="text" [(ngModel)]="workout.typeOfExercise" name="workoutName" value="{{ workout.name }}">
+            <br>
+            <label for="workout-sets-input"> Sets: </label>
+            <input id="workout-sets-input" type="text" [(ngModel)]="workout.sets" name="workoutSets" value="{{ workout.sets }}">
+            <br>
+            <label for="workout-reps-input"> Reps: </label>
+            <input id="workout-reps-input" type="text" [(ngModel)]="workout.reps" name="workoutReps" value="{{ workout.reps }}">
+            <br>
+            <label for="workout-duration-input"> Rest: </label>
+            <input id="workout-duration-input" type="duration" [(ngModel)]="workout.duration" name="workoutduration" value="{{ workout.duration }}">
+            <br>
+            <button type="submit">Save updates</button>
+          </form>
+          <br>
+          
+          <hr>
+        <!-- </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
     </div>
-    <!-- <p>{{ workout.reviews}}</p> -->
-    <button *ngIf="workout._id" (click)="deleteThisWorkout()">
-      DELETE
-    </button>
-
-  <!-- </div> -->
-  <hr>
-  <!-- update workout area -->
-
-<form (ngSubmit)="doTheUpdate(workout._id, myForm)" #myForm="ngForm" >
-  
-  <label for="workout-name-input"> Name: </label>
-  <input id="workout-name-input" type="text"  [(ngModel)]="workout.typeOfExercise" name="workoutName" value="{{ workout.name }}">
-  <br>
-  <label for="workout-sets-input"> Sets: </label>
-  <input id="workout-sets-input" type="text"  [(ngModel)]="workout.sets" name="workoutSets" value="{{ workout.sets }}">
-  <br>
-  <label for="workout-reps-input"> Reps: </label>
-  <input id="workout-reps-input" type="text"  [(ngModel)]="workout.reps" name="workoutReps" value="{{ workout.reps }}">
-  <br>
-  <label for="workout-duration-input"> Rest: </label>
-  <input id="workout-duration-input" type="duration"  [(ngModel)]="workout.duration" name="workoutduration" value="{{ workout.duration }}">
-  <br>
-  <button type="submit">Save updates</button>
-</form>
-<br>
-<a [routerLink]="['/workouts']">back</a>
+  </div> -->
+  <a [routerLink]="['/workouts']">back</a>
+<!-- </div> -->
 <hr>
 
 <p>Add the review below:</p>
- <form (ngSubmit)="createReview(workout._id, reviewData)" >
-     <label for="review-content-input"> Content </label>
-     <input id="review-content-input" type="text"  [(ngModel)]="reviewData.content" name="content">
-     <br>
-     <button type="submit">Submit the review</button>
- </form>
+<form (ngSubmit)="createReview(workout._id, reviewData)">
+  <label for="review-content-input"> Content </label>
+  <input id="review-content-input" type="text" [(ngModel)]="reviewData.content" name="content">
+  <br>
+  <button type="submit">Submit the review</button>
+</form>

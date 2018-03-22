@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   signUpInfo ={
-    // fullName: "",
+    fullName: "",
     username: "",
     password: ""
   };
@@ -26,7 +26,7 @@ export class SignupComponent implements OnInit {
     .then(resultFromApi => {
       // Clear Form
       this.signUpInfo = { 
-        // fullName:"", 
+        fullName:"", 
         username: "", 
         password: ""};
 
